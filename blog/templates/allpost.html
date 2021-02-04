@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+	<div class="container">
+		{% for blogDetails in allpostdict %}
+			<a href="/post/{{blogDetails.id}}/">
+				<h1>{{blogDetails.title}}</h1>
+			</a>
+			<a href="/edit/{{blogDetails.id}}/">Edit</a>
+			<a href="/delete/{{blogDetails.id}}/">Delete</a>
+			<p>Published on : {{blogDetails.created}}</p>
+			<p>{{blogDetails.content}}</p>
+			<hr>
+		{% endfor %}
+	</div>
+{% endblock %}

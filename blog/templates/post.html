@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+	<a href="/allpost/">Back to catalog</a>
+	<h1>{{currentpost.title}}</h1>
+	<a href="/edit/{{currentpost.id}}/">Edit</a>
+	<a href="/delete/{{currentpost.id}}/">Delete</a>
+	<p>Publised on {{currentpost.created}}</p>
+	<hr>
+	<p>{{currentpost.content}}</p>
+</div>
+
+{% endblock %}

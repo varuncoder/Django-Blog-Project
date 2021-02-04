@@ -1,4 +1,4 @@
-"""kastajeevana URL Configuration
+"""cms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',home),
+    #path('greet/<str:name>/',greet)
+    path('post/<int:post_id>/', post_page),
+    path('allpost/',all_post),
+    path('delete/<int:post_id>/',delete_post),
+    path('create/',create_post),
+    path('edit/<int:post_id>/',edit_post)
 ]
